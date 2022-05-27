@@ -10,4 +10,21 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="_1">1</string>
+    <string name="btn4" />
+    <string name="btn5" />
+    <string name="btn6" />
+    <string name="minus" />
+    <string name="plus" />
+    <string name="btn3" />
+    <string name="btn2" />
+    <string name="btn1" />
+    <string name="btn7" />
+    <string name="btn8" />
+    <string name="btn9" />
+    <string name="mult" />
+    <string name="btn_clear" />
+    <string name="btn0" />
+    <string name="btn_dot" />
+    <string name="division" />
+    <string name="equal" />
 </resources>
