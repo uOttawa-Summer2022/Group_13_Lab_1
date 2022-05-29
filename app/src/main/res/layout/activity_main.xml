@@ -133,42 +133,27 @@
         <Button android:id="@+id/btn_multiplication"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/btn6"/>
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="300dp"
+            android:text="@string/minus"
+            android:translationX="15dp"
+            android:translationY="545dp" />
         <Button android:id="@+id/btn_addition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="-100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="300dp"
+            android:text="@string/minus"
+            android:translationX="210dp"
+            android:translationY="500dp" />
+        <Button android:id="@+id/btn_division"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginBottom="300dp"
             android:text="@string/minus"
             android:translationX="210dp"
             android:translationY="500dp" />
     </TableRow>
-    <TableRow android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <Button android:id="@+id/button10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/btn8"/>
-        <Button android:id="@+id/button11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/btn9"/>
-        <Button android:id="@+id/button12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="@string/mult"/>
-    </TableRow>
-    <TableRow android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </TableRow>
-    <TableRow android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </TableRow>
 </androidx.constraintlayout.widget.ConstraintLayout>
