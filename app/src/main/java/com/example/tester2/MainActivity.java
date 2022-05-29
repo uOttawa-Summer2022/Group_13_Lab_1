@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -15,10 +15,11 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.tester2.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    Button btn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //                .setAction("Action", null).show();
       //      }
       //  });
+        btn1 = (Button) findViewById(R.id.btn1);
+        setClickListeners();
+
+    }
+    void setClickListeners(){
+        btn1.setOnClickListener(this);
     }
 
     @Override
@@ -71,11 +78,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        // this is the place where I will add code
+        switch (v.getId()) {
+            case R.id.btn1:
+                btn1.setText("300"); //This is for testing
+        }
     }
 }
