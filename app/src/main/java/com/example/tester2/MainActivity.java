@@ -57,15 +57,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
       //  });
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
-       /* btn3 = (Button) findViewById(R.id.btn3);
+        btn3 = (Button) findViewById(R.id.btn3);
         btn4 = (Button) findViewById(R.id.btn4);
         btn5 = (Button) findViewById(R.id.btn5);
         btn6 = (Button) findViewById(R.id.btn6);
         btn7 = (Button) findViewById(R.id.btn7);
         btn8 = (Button) findViewById(R.id.btn8);
-        btn9 = (Button) findViewById(R.id.btn9);*/
+        btn9 = (Button) findViewById(R.id.btn9);
+        btn0 = (Button) findViewById(R.id.btn0);
         btn_clear = (Button) findViewById(R.id.btn_clear);
-        btn0 = (Button) findViewById(R.id.button0);
         btn_division = (Button) findViewById(R.id.btn_division);
         btn_equal = (Button) findViewById(R.id.btn_equal);
         btn_addition = (Button) findViewById(R.id.btn_addition);
@@ -81,6 +81,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     void setClickListeners(){
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
+        btn4.setOnClickListener(this);
+        btn5.setOnClickListener(this);
+        btn6.setOnClickListener(this);
+        btn7.setOnClickListener(this);
+        btn8.setOnClickListener(this);
+        btn9.setOnClickListener(this);
         btn0.setOnClickListener(this);
         btn_addition.setOnClickListener(this);
         btn_multiplication.setOnClickListener(this);
@@ -133,12 +140,37 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onClick(View v) {
         // this is the place where I will add code
-        /*switch (v.getId()) {
+        /*
+        switch (v.getId()) {
             case R.id.btn1:
                 text_display.setText(text_display.getText()+"1"); //
                 break;
             case R.id.btn2:
                 text_display.setText(text_display.getText()+"2"); //
+                break;
+            case R.id.btn3:
+                text_display.setText(text_display.getText()+"3"); //
+                break;
+            case R.id.btn4:
+                text_display.setText(text_display.getText()+"4"); //
+                break;
+            case R.id.btn5:
+                text_display.setText(text_display.getText()+"5"); //
+                break;
+            case R.id.btn6:
+                text_display.setText(text_display.getText()+"6"); //
+                break;
+            case R.id.btn7:
+                text_display.setText(text_display.getText()+"7"); //
+                break;
+            case R.id.btn8:
+                text_display.setText(text_display.getText()+"8"); //
+                break;
+            case R.id.btn9:
+                text_display.setText(text_display.getText()+"9"); //
+                break;
+            case R.id.btn0:
+                text_display.setText(text_display.getText()+"0"); //
                 break;
             case R.id.btn_multiplication:
                 text_display.setText(text_display.getText()+"*");
@@ -179,7 +211,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
         switch(temp) {
-            case R.id.button0:
+            case R.id.btn0:
                 if (isOperandSet == false) {
                     op1 = op1 + btn0.getText();
 
@@ -206,8 +238,78 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     text_display.setText((text_display.getText().toString().concat(btn2.getText().toString())));
 
                 }else {
-                    op2 =op2.concat( btn2.getText().toString());
+                    op2 =op2.concat(btn2.getText().toString());
                     text_display.setText((text_display.getText().toString().concat(btn2.getText().toString())));
+                }
+                break;
+            case R.id.btn3:
+                if (isOperandSet == false) {
+                    op1 = op1.concat(btn3.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn3.getText().toString())));
+
+                }else {
+                    op2 =op2.concat(btn3.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn3.getText().toString())));
+                }
+                break;
+            case R.id.btn4:
+                if (isOperandSet == false) {
+                    op1 = op1.concat(btn4.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn4.getText().toString())));
+
+                }else {
+                    op2 =op2.concat(btn4.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn4.getText().toString())));
+                }
+                break;
+            case R.id.btn5:
+                if (isOperandSet == false) {
+                    op1 = op1.concat(btn5.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn5.getText().toString())));
+
+                }else {
+                    op2 =op2.concat(btn5.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn5.getText().toString())));
+                }
+                break;
+            case R.id.btn6:
+                if (isOperandSet == false) {
+                    op1 = op1.concat(btn6.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn6.getText().toString())));
+
+                }else {
+                    op2 =op2.concat(btn6.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn6.getText().toString())));
+                }
+                break;
+            case R.id.btn7:
+                if (isOperandSet == false) {
+                    op1 = op1.concat(btn7.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn7.getText().toString())));
+
+                }else {
+                    op2 =op2.concat(btn7.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn7.getText().toString())));
+                }
+                break;
+            case R.id.btn8:
+                if (isOperandSet == false) {
+                    op1 = op1.concat(btn8.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn8.getText().toString())));
+
+                }else {
+                    op2 =op2.concat(btn8.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn8.getText().toString())));
+                }
+                break;
+            case R.id.btn9:
+                if (isOperandSet == false) {
+                    op1 = op1.concat(btn9.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn9.getText().toString())));
+
+                }else {
+                    op2 =op2.concat(btn9.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn9.getText().toString())));
                 }
                 break;
             case R.id.btn_addition:
