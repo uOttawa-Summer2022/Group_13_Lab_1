@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="300dp"
-            android:text="@string/btn3"
+            android:text="@string/plus"
             android:translationY="400dp" />
 
         <Button android:id="@+id/btn_subtraction"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="300dp"
-            android:text="@string/btn4"
+            android:text="@string/minus"
             android:translationY="400dp" />
 
         <Button
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-100dp"
             android:layout_marginBottom="300dp"
-            android:text="@string/btn5"
+            android:text="@string/mult"
             android:translationX="-280dp"
             android:translationY="450dp" />
 
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-100dp"
             android:layout_marginBottom="300dp"
-            android:text="@string/btn6"
+            android:text="@string/division"
             android:translationX="-170dp"
             android:translationY="450dp" />
 
@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-100dp"
             android:layout_marginBottom="300dp"
-            android:text="@string/btn7"
+            android:text="@string/equal"
             android:translationX="-60dp"
             android:translationY="450dp" />
 
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-100dp"
             android:layout_marginBottom="300dp"
-            android:text="@string/btn8"
+            android:text="@string/btn_dot"
             android:translationX="50dp"
             android:translationY="450dp" />
 
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-100dp"
             android:layout_marginBottom="300dp"
-            android:text="@string/btn9"
+            android:text="@string/btn_clear"
             android:translationX="-230dp"
             android:translationY="500dp" />
 
@@ -107,7 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-100dp"
             android:layout_marginBottom="300dp"
-            android:text="@string/btn2"
+            android:text="@string/btn0"
             android:translationX="-125dp"
             android:translationY="500dp" />
 
