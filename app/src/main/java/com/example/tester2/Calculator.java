@@ -9,6 +9,7 @@ public class Calculator {
     private String operand1;
     private String operand2;
     private BigDecimal resultInDecimal;
+    private boolean integerPrecision =false;
     private boolean error = false;
 
 
@@ -30,11 +31,18 @@ public class Calculator {
     public void setArithmeticOperator(String operator) {
         this.operator = operator;
     }
+    public void setIntegerPrecision(boolean value){
+        integerPrecision = value;
+    }
 
 
     public String getResult(){
         calculate();
         if(!error){
+            if(integerPrecision){
+                Integer i = resultInDecimal.intValue();
+                return i.toString();
+            }
             return resultInDecimal.toString() ;
         }else{
             error = false;

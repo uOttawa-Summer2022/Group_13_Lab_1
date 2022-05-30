@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     String result="";
     boolean isOperandSet = false;
     boolean resetText= false;
+    boolean isOp1DecimalSet=false;
+    boolean isOp2DecimalSet=false;
     Calculator calc = new Calculator();
 
     @Override
@@ -221,6 +223,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     text_display.setText((text_display.getText().toString().concat(btn0.getText().toString())));
                 }
                 break;
+
             case R.id.btn1:
                 if (isOperandSet == false) {
                     op1 = op1 + btn1.getText();
@@ -232,6 +235,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
 
                 break;
+
             case R.id.btn2:
                 if (isOperandSet == false) {
                     op1 = op1.concat(btn2.getText().toString());
@@ -242,6 +246,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     text_display.setText((text_display.getText().toString().concat(btn2.getText().toString())));
                 }
                 break;
+
             case R.id.btn3:
                 if (isOperandSet == false) {
                     op1 = op1.concat(btn3.getText().toString());
@@ -252,6 +257,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     text_display.setText((text_display.getText().toString().concat(btn3.getText().toString())));
                 }
                 break;
+
             case R.id.btn4:
                 if (isOperandSet == false) {
                     op1 = op1.concat(btn4.getText().toString());
@@ -262,6 +268,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     text_display.setText((text_display.getText().toString().concat(btn4.getText().toString())));
                 }
                 break;
+
             case R.id.btn5:
                 if (isOperandSet == false) {
                     op1 = op1.concat(btn5.getText().toString());
@@ -272,6 +279,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     text_display.setText((text_display.getText().toString().concat(btn5.getText().toString())));
                 }
                 break;
+
             case R.id.btn6:
                 if (isOperandSet == false) {
                     op1 = op1.concat(btn6.getText().toString());
@@ -282,6 +290,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     text_display.setText((text_display.getText().toString().concat(btn6.getText().toString())));
                 }
                 break;
+
             case R.id.btn7:
                 if (isOperandSet == false) {
                     op1 = op1.concat(btn7.getText().toString());
@@ -292,6 +301,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     text_display.setText((text_display.getText().toString().concat(btn7.getText().toString())));
                 }
                 break;
+
             case R.id.btn8:
                 if (isOperandSet == false) {
                     op1 = op1.concat(btn8.getText().toString());
@@ -302,6 +312,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     text_display.setText((text_display.getText().toString().concat(btn8.getText().toString())));
                 }
                 break;
+
             case R.id.btn9:
                 if (isOperandSet == false) {
                     op1 = op1.concat(btn9.getText().toString());
@@ -312,6 +323,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     text_display.setText((text_display.getText().toString().concat(btn9.getText().toString())));
                 }
                 break;
+
             case R.id.btn_addition:
                 if (isOperandSet == false){
                     operand = btn_addition.getText().toString();
@@ -320,13 +332,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                 }
                 break;
+
             case R.id.btn_subtraction:
-                if (isOperandSet == false){
+                if (isOperandSet == false && !op1.isEmpty()){
                     operand = btn_subtraction.getText().toString();
                     isOperandSet = true;
                     text_display.setText(text_display.getText().toString().concat(operand));
                 }
+                else if(op1.isEmpty()) { //for handling -Numbers
+                    op1 = op1.concat(btn_subtraction.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn_subtraction.getText().toString())));
+                }
+
                 break;
+
             case R.id.btn_multiplication:
                 if (isOperandSet == false){
                     operand = btn_multiplication.getText().toString();
@@ -334,6 +353,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     text_display.setText(text_display.getText().toString().concat(operand));
                 }
                 break;
+
             case R.id.btn_division:
                 if (isOperandSet == false){
                     operand = btn_division.getText().toString();
@@ -341,8 +361,29 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     text_display.setText(text_display.getText().toString().concat(operand));
                 }
                 break;
+
+            case R.id.btn_decimal:
+                if(isOperandSet == false && isOp1DecimalSet == false){//1.1
+                    op1 = op1.concat(btn_decimal.getText().toString());
+                    text_display.setText((text_display.getText().toString().concat(btn_decimal.getText().toString())));
+                    isOp1DecimalSet=true;
+                }else if(isOperandSet == true && isOp2DecimalSet == false){
+                    op2 = op2.concat(btn_decimal.getText().toString());;
+                    text_display.setText((text_display.getText().toString().concat(btn_decimal.getText().toString())));
+                    isOp2DecimalSet =true;
+                }
+                //try{
+
+               // }catch(){
+
+                //}
+                break;
+
             case R.id.btn_equal:
                 if(!op1.equals("") && !op2.equals("") && !operand.equals("")){
+                    if(!(op1.contains(".") || op2.contains("."))){
+                        calc.setIntegerPrecision(true);
+                    }
                     calc.setOperands(op1,op2);
                     calc.setArithmeticOperator(operand);
                     result = calc.getResult();
@@ -352,8 +393,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     operand = "";
                     isOperandSet = false;
                     resetText = true;
+                    isOp1DecimalSet= false;
+                    isOp2DecimalSet=false;
+                    calc.setIntegerPrecision(false);
                 }
-
                 break;
             case R.id.btn_clear:
                 text_display.setText("");
@@ -362,6 +405,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 operand = "";
                 isOperandSet = false;
                 resetText = true;
+                isOp1DecimalSet= false;
+                isOp2DecimalSet=false;
+                calc.setIntegerPrecision(false);
                 break;
         }
     }
