@@ -3,12 +3,13 @@ package com.example.tester2;
 
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class Calculator {
     private String operator;
     private String operand1;
     private String operand2;
-    private BigDecimal resultInDecimal;
+    private double resultInDecimal;
     private boolean integerPrecision =false;
     private boolean error = false;
 
@@ -38,12 +39,9 @@ public class Calculator {
 
     public String getResult(){
         calculate();
+        DecimalFormat format = new DecimalFormat("0.##");
         if(!error){
-            if(integerPrecision){
-                Integer i = resultInDecimal.intValue();
-                return i.toString();
-            }
-            return resultInDecimal.toString() ;
+            return format.format(resultInDecimal).toString();
         }else{
             error = false;
             return "ERROR";
@@ -53,22 +51,22 @@ public class Calculator {
 
 
     private void calculate(){
-        BigDecimal opD1 = BigDecimal.ZERO;
-        BigDecimal opD2 = BigDecimal.ZERO;
-        opD1 = BigDecimal.valueOf(Double.parseDouble(operand1));
-        opD2 = BigDecimal.valueOf(Double.parseDouble(operand2));
+        double opD1 = 0;
+        double opD2 = 0;
+        opD1 = Double.parseDouble(operand1);
+        opD2 = Double.parseDouble(operand2);
         if(operator.equals("+")){
-            resultInDecimal = opD1.add(opD2);
+            resultInDecimal = opD1+opD2;
         }
         else if (operator.equals("-")){
-            resultInDecimal = opD1.subtract(opD2);
+            resultInDecimal = opD1-opD2;
         }
         else if (operator.equals("*")){
-            resultInDecimal = opD1.multiply(opD2);
+            resultInDecimal = opD1*opD2;
         }
         else if (operator.equals("/")){
-            if(opD2.compareTo(BigDecimal.ZERO) != 0) {
-                resultInDecimal = opD1.divide(opD2);
+            if(opD2 != 0) {
+                resultInDecimal = opD1/opD2;
             }else{
                 error = true;
             }
