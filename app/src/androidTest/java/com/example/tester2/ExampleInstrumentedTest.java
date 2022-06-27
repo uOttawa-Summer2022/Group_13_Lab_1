@@ -23,4 +23,8 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.example.tester2", appContext.getPackageName());
     }
+
+    //@Test
+    //public void cannotHaveMultipleOperators() {
+    //}
 }
