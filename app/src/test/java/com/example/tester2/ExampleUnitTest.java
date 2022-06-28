@@ -109,7 +109,7 @@ public class ExampleUnitTest {
     @Test
     public void cannotDivideZero() {
         Calculator calc = new Calculator();
-        calc.setOperands("6","3");
+        calc.setOperands("6","0");
         calc.setArithmeticOperator("/");
         assertEquals(calc.getResult(), "ERROR");
     }
