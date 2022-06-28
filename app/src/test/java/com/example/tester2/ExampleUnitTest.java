@@ -15,7 +15,7 @@ public class ExampleUnitTest {
         Calculator calc = new Calculator();
         calc.setOperands("2","2");
         calc.setArithmeticOperator("+");
-        assertEquals(calc.getResult(), "4");
+        assertEquals("Cannot perform addition properly.",calc.getResult(), "4");
     }
 
     @Test
@@ -23,7 +23,7 @@ public class ExampleUnitTest {
         Calculator calc = new Calculator();
         calc.setOperands("2","2.05");
         calc.setArithmeticOperator("+");
-        assertEquals(calc.getResult(),"4.05");
+        assertEquals("Cannot perform addition properly with doubles.",calc.getResult(),"4.05");
     }
 
     @Test
@@ -31,23 +31,23 @@ public class ExampleUnitTest {
         Calculator calc = new Calculator();
         calc.setOperands("1","2.00000005");
         calc.setArithmeticOperator("+");
-        assertEquals(calc.getResult(),"3");
+        assertEquals("Cannot round properly with addition.",calc.getResult(),"3");
     }
 
     @Test
-    public void multiplcation_isCorrect() {
+    public void multiplication_isCorrect() {
         Calculator calc = new Calculator();
         calc.setOperands("2","3");
         calc.setArithmeticOperator("*");
-        assertEquals(calc.getResult(), "6");
+        assertEquals("Cannot multiply correctly.",calc.getResult(), "6");
     }
 
     @Test
-    public void multiplcationWithDouble_isCorrect() {
+    public void multiplicationWithDouble_isCorrect() {
         Calculator calc = new Calculator();
         calc.setOperands("2.5","3.5");
         calc.setArithmeticOperator("*");
-        assertEquals(calc.getResult(), "8.75");
+        assertEquals("Cannot multiply correctly with doubles.",calc.getResult(), "8.75");
     }
 
     @Test
@@ -55,7 +55,7 @@ public class ExampleUnitTest {
         Calculator calc = new Calculator();
         calc.setOperands("2.55","3.55");
         calc.setArithmeticOperator("*");
-        assertEquals(calc.getResult(), "9.05");
+        assertEquals("Cannot round properly with multiplication.",calc.getResult(), "9.05");
     }
 
     @Test
@@ -63,7 +63,7 @@ public class ExampleUnitTest {
         Calculator calc = new Calculator();
         calc.setOperands("2","3");
         calc.setArithmeticOperator("-");
-        assertEquals(calc.getResult(), "-1");
+        assertEquals("Cannot perform subtraction correctly.",calc.getResult(), "-1");
     }
 
     @Test
@@ -71,7 +71,7 @@ public class ExampleUnitTest {
         Calculator calc = new Calculator();
         calc.setOperands("2","3.5");
         calc.setArithmeticOperator("-");
-        assertEquals(calc.getResult(), "-1.5");
+        assertEquals("Cannot perform subtraction with doubles.",calc.getResult(), "-1.5");
     }
 
     @Test
@@ -79,7 +79,7 @@ public class ExampleUnitTest {
         Calculator calc = new Calculator();
         calc.setOperands("2","3.0005");
         calc.setArithmeticOperator("-");
-        assertEquals(calc.getResult(), "-1");
+        assertEquals("Subtraction does not round properly.",calc.getResult(), "-1");
     }
 
     @Test
@@ -87,7 +87,7 @@ public class ExampleUnitTest {
         Calculator calc = new Calculator();
         calc.setOperands("6","3");
         calc.setArithmeticOperator("/");
-        assertEquals(calc.getResult(), "2");
+        assertEquals("Division Incorrect.",calc.getResult(), "2");
     }
 
     @Test
@@ -95,7 +95,7 @@ public class ExampleUnitTest {
         Calculator calc = new Calculator();
         calc.setOperands("9","2.5");
         calc.setArithmeticOperator("/");
-        assertEquals(calc.getResult(), "3.6");
+        assertEquals("Cannot Divide With Doubles.",calc.getResult(), "3.6");
     }
 
     @Test
@@ -103,7 +103,7 @@ public class ExampleUnitTest {
         Calculator calc = new Calculator();
         calc.setOperands("10","6");
         calc.setArithmeticOperator("/");
-        assertEquals(calc.getResult(), "1.67");
+        assertEquals("Not Proper Decimal.",calc.getResult(), "1.67");
     }
 
     @Test
@@ -111,7 +111,7 @@ public class ExampleUnitTest {
         Calculator calc = new Calculator();
         calc.setOperands("6","0");
         calc.setArithmeticOperator("/");
-        assertEquals(calc.getResult(), "ERROR");
+        assertEquals("Divide By Zero Provides Different Answer.",calc.getResult(), "ERROR");
     }
 
 
